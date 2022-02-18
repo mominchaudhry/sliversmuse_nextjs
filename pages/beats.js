@@ -7,7 +7,7 @@ export default function BeatsPage ({beats = []}) {
     <div>
         <Head>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
             <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Kolker+Brush&family=Luckiest+Guy&family=Vujahday+Script&display=swap" rel="stylesheet"/>
         </Head>
         <div className="app">
