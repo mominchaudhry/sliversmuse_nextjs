@@ -1,0 +1,133 @@
+.text {
+  font-size: 100px;
+  color: white;
+}
+
+.footer-text {
+  font-size: 30px;
+  color: white;
+}
+
+.godmode {
+  width: 15%;
+}
+
+.nav-menu {
+  justify-content: flex-start;
+}
+
+.navbar-main {
+  width: 100%;
+}
+
+.myfont {
+  /* font-family: "Bilbo Swash Caps", cursive; */
+  /* font-family: "Kolker Brush", cursive; */
+  /* font-family: "Vujahday Script", cursive; */
+  font-family: "Luckiest Guy", cursive;
+}
+
+.logo {
+  height: 65vh;
+}
+
+.main-section {
+  min-height: 100vh;
+}
+
+.header-link {
+  width: 200px;
+}
+
+.contact-link {
+  width: 75%;
+}
+
+.logo-link {
+  padding-left: 15px;
+  width: 50%;
+}
+
+.about-link {
+  width: 60%;
+}
+
+.beat {
+  background-color: #222;
+  width: 300px;
+  margin: 10px;
+}
+
+.beat p{
+  font-size: 40%;
+  width: 150px;
+  height: 50px;
+  margin: 10px 0px 0px 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.beat-description {
+  max-width: 300px !important;
+  max-height: 100px !important;
+  font-size: 20px !important;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.beat button {
+  font-size: 15px;
+  margin: 10px 10px 0px 0px;
+  height: 50px;
+  width: 100px;
+  background: none;
+  border: none;
+}
+
+.beat audio{
+  margin: 20px;
+  width: 90%;
+}
+
+.beat-section {
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1300px) {
+  .text {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .logo-section {
+    flex-direction: column;
+  }
+
+  .text {
+    font-size: 12vw;
+    margin-bottom: -25px;
+  }
+
+  .logo {
+    width: 65%;
+    height: 65%;
+  }
+
+  .nav-menu {
+    left: 200%;
+    align-self: flex-start;
+  }
+  .contact-link {
+    padding-left: 15px;
+  }
+
+  .godmode {
+    width: 30%;
+  }
+
+  .about-link {
+    width: 70%;
+    padding: 20px;
+  }
+}
