@@ -48,6 +48,7 @@ const Beats = ({beats=[]}) => {
                                     <p>{formatPrice(beat.price)}</p>
                                 </div>)
                             })}
+                            <p>All beats will be sent to the email entered upon checkout</p>
                             <button className="checkout-button" onClick={() => {
                                 axios.post("https://sliversmuse.herokuapp.com/api/orders", {products:cart})
                             }}>CHECKOUT</button>
