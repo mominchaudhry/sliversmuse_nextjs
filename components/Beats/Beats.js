@@ -43,7 +43,7 @@ const Beats = ({beats=[]}) => {
                             </div>
                             {cart.map((b) => {
                                 const beat = beats.find(i => i.id === b)
-                                return (<div className='d-flex cart-beat'>
+                                return (<div className='d-flex cart-beat' key={beat.id}>
                                     <p>{beat.name}</p>
                                     <p>{formatPrice(beat.price)}</p>
                                 </div>)
