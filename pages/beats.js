@@ -1,12 +1,25 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Beats from "../components/Beats";
+import LoadingPage from "../components/LoadingPage/LoadingPage";
 import MyNavbar from "../components/MyNavbar";
-import Head from 'next/head'
 
 export default function BeatsPage ({beats = []}) {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingPage />
+  }
+
   return (
     <div className="app">
       <div className="d-flex flex-column justify-content-between main-section">
-        <MyNavbar beats={true}/>
+        <MyNavbar setLoading={setIsLoading} beats={true}/>
         <Beats beats={beats}/>
         <div className="d-flex justify-content-center w-100">
         <img loading="lazy" className="godmode" src="/Assets/godmode.png" alt="godmode" />
@@ -17,16 +30,16 @@ export default function BeatsPage ({beats = []}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://sliversmuse.herokuapp.com/api/beats?populate=mp3')
-  const json = await res.json()
+  const data = await axios.get('https://sliversmuse.herokuapp.com/api/beats?populate=mp3')
 
   let beatsData = []
-  for (let b of json.data){
+  for (let b of data?.data?.data){
       beatsData = [{
         id: b.id,
         name: b.attributes.title,
         description: b.attributes.description,
-        mp3: b.attributes.mp3.data.attributes.url
+        mp3: b.attributes.mp3.data.attributes.url,
+        price: b.attributes.price
       }, ...beatsData]
   }
   return {

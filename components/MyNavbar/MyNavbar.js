@@ -1,14 +1,9 @@
 import React from 'react'
 import { Nav, Navbar } from "react-bootstrap";
 
-const MyNavbar = ({beats = false}) => {
+const MyNavbar = ({beats = false, setLoading}) => {
   return (
     <div className="nav-menu d-flex justify-content-start navbar-section">
-
-
-
-
-
       <Navbar className='navbar-main' collapseOnSelect expand="lg" bg="black" variant="dark">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -16,6 +11,7 @@ const MyNavbar = ({beats = false}) => {
             <Nav.Link
                   href="/"
                   className="header-link"
+                  onClick={() => {setLoading(true)}}
                 >
                   <img
                     loading="lazy"
@@ -24,7 +20,6 @@ const MyNavbar = ({beats = false}) => {
                     className="logo-link"
                   />
                 </Nav.Link>
-              
               </Nav>
               <Nav>
                 <Nav.Link
@@ -41,6 +36,7 @@ const MyNavbar = ({beats = false}) => {
                 <Nav.Link
                   href={beats ? "/" : "/beats"}
                   className="header-link"
+                  onClick={() => {setLoading(true)}}
                 >
                   <img
                     loading="lazy"
@@ -52,32 +48,7 @@ const MyNavbar = ({beats = false}) => {
               </Nav>
         </Navbar.Collapse>
       </Navbar>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* 
-        <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
-          <Container>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              
-            </Navbar.Collapse>
-          </Container>
-        </Navbar> */}
-      </div>
+    </div>
   )
 }
 
