@@ -232,18 +232,18 @@ body.active-modal {
   justify-content:space-between;
   font-size: 25px;
   border-style: solid;
-  border-top:#fff;
-  border-left: #fff;
-  border-right: #fff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .cart-total {
   justify-content:space-between;
   font-size: 25px;
   border-style: solid;
-  border-bottom:#fff;
-  border-left: #fff;
-  border-right: #fff;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }
 
 .cart-button {
