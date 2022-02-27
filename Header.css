@@ -246,6 +246,15 @@ body.active-modal {
   border-right: none;
 }
 
+.success-message {
+  color: white;
+  font-size: 20px;
+}
+
+.success-section {
+ width: 25%;
+}
+
 .cart-button {
   transition: transform 0.2s;
 }
@@ -295,4 +304,8 @@ body.active-modal {
   .modal-content2 {
     width: 300px;
   }
+
+  .success-section {
+    width: 75%;
+   }
 }
