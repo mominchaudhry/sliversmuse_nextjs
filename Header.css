@@ -209,7 +209,7 @@ body.active-modal {
   color: white;
   border: none;
   font-size: 30px;
-  width: 50%;
+  width: 80%;
   align-self: center;
   transition: transform 0.2s;
 }
