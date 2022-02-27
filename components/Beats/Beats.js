@@ -9,6 +9,17 @@ const Beats = ({beats=[]}) => {
 
     const [modal, setModal] = useState(false);
 
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        if (cart.length > 0) {
+            setTotal(cart.reduce((a,b) => {
+                const beatPrice = beats.find(c => c.id===b)
+                return a+beatPrice.price
+            }, 0))
+        }
+    }, [cart]);
+
     const toggleModal = () => {
         setModal(!modal);
     };
@@ -19,7 +30,7 @@ const Beats = ({beats=[]}) => {
         } else {
             document.body.classList.remove('active-modal')
         }
-    }, [modal])
+    }, [modal]);
 
     return (
         <div className="d-flex flex-column align-items-center justify-content-around mb-5">
@@ -48,7 +59,11 @@ const Beats = ({beats=[]}) => {
                                     <p>{formatPrice(beat.price)}</p>
                                 </div>)
                             })}
-                            <p>All beats will be sent to the email entered upon checkout</p>
+                            <div className='d-flex cart-total pt-3'>
+                                <p className=''>TOTAL</p>
+                                <p className=''>{formatPrice(total)}</p>
+                            </div>
+                            <p>All beats will be sent as .WAV files to the email entered upon checkout</p>
                             <button className="checkout-button" onClick={() => {
                                 axios.post("https://sliversmuse.herokuapp.com/api/orders", {products:cart})
                             }}>CHECKOUT</button>
@@ -64,7 +79,7 @@ const Beats = ({beats=[]}) => {
                 <div className="text d-flex justify-content-center flex-wrap">
                     {beats.map(beat => {
                         return <div className="d-flex justify-content-between flex-column beat align-items-center beat-item" key={beat.id}>
-                            <div className='d-flex w-100'>
+                            <div className='d-flex justify-content-between w-100'>
                                 <p className='myfont beat-name'>{beat.name}</p>
                                 <p className='myfont beat-price'> {formatPrice(beat.price)}</p>
                             </div>
@@ -73,7 +88,7 @@ const Beats = ({beats=[]}) => {
                                 This browser does not support the audio element. Please use a different browser
                             </audio>
                             <button 
-                            className='myfont w-100' 
+                            className='myfont w-100 cart-button' 
                             onClick={() => {
                                 if (!cart.includes(beat.id)){
                                     setCart([...cart, beat.id])
