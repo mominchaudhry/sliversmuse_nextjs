@@ -232,7 +232,7 @@ body.active-modal {
   justify-content:space-between;
   font-size: 25px;
   border-style: solid;
-  border-top: none;
+  border-top: none !important;
   border-left: none;
   border-right: none;
 }
@@ -241,7 +241,7 @@ body.active-modal {
   justify-content:space-between;
   font-size: 25px;
   border-style: solid;
-  border-bottom: none;
+  border-bottom: none !important;
   border-left: none;
   border-right: none;
 }
