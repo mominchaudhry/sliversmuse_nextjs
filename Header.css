@@ -27,8 +27,18 @@
   font-family: "Luckiest Guy", cursive;
 }
 
+.order-number {
+  font-size: 50px;
+  color: white;
+  border-style: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 0;
+}
+
 .logo {
-  height: 65vh;
+  height: 50vh;
 }
 
 .main-section {

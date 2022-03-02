@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import CartModal from '../CartModal'
 
 const Beats = ({beats=[]}) => {
 
@@ -38,42 +38,13 @@ const Beats = ({beats=[]}) => {
                 <div className="text header d-flex justify-content-center myfont mt-4">
                     BEATS
                 </div>
-                <img className='cart-icon' src="/Assets/cart.svg" onClick={toggleModal}/>
-                {cart.length > 0 && <p className='myfont cart-counter'>{cart.length}</p>}
+                {cart.length > 0 && <>
+                    <img className='cart-icon' src="/Assets/cart.svg" onClick={toggleModal}/>
+                    <p className='myfont cart-counter'>{cart.length}</p>
+                </>}
             </div>
             {modal && (
-                <div className="modal-cart">
-                    <div onClick={toggleModal} className="overlay"></div>
-                    <div className="modal-content2 myfont">
-                        {cart.length > 0 ?
-                        <>
-                            <h2>Cart</h2>
-                            <div className='d-flex cart-labels mb-3'>
-                                <p className='mb-0'>BEAT</p>
-                                <p className='mb-0'>PRICE</p>
-                            </div>
-                            {cart.map((b) => {
-                                const beat = beats.find(i => i.id === b)
-                                return (<div className='d-flex cart-beat' key={beat.id}>
-                                    <p>{beat.name}</p>
-                                    <p>{formatPrice(beat.price)}</p>
-                                </div>)
-                            })}
-                            <div className='d-flex cart-total pt-3'>
-                                <p className=''>TOTAL</p>
-                                <p className=''>{formatPrice(total)}</p>
-                            </div>
-                            <p>All beats will be sent as .WAV files to the email entered upon checkout</p>
-                            <button className="checkout-button" onClick={() => {
-                                axios.post("https://sliversmuse.herokuapp.com/api/orders", {products:cart})
-                            }}>CHECKOUT</button>
-                        </> : 
-                        <p className='loading-text'>Cart is empty!</p>}
-                        <button className="close-modal" onClick={toggleModal}>
-                        CLOSE
-                        </button>
-                    </div>
-                </div>
+                <CartModal toggleModal={toggleModal} cart={cart} total={total} beats={beats} formatPrice={formatPrice} />
             )}
             <div className="text d-flex align-items-center beat-section">
                 <div className="text d-flex justify-content-center flex-wrap">

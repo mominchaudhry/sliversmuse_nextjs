@@ -1,22 +1,63 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import {useRouter} from 'next/router'
 
 function SuccessPage() {
+
+    const router = useRouter();
+    const {session_id} = router.query
+    const [order, setOrder] = useState(null)
+
+    const confirm = async () => {
+        console.log('momin',  session_id)
+        const confirmedOrder = await axios.post("https://sliversmuse.herokuapp.com/api/orders/confirm", {checkout_session: session_id});
+        if (confirmedOrder.status === 200) {
+            setOrder(confirmedOrder.data)
+        }
+    }
+
+    useEffect(() => {
+        if (session_id) {
+            confirm()
+        }
+    }, [session_id]);
+
+
   return (
     <div className="d-flex flex-column align-items-center justify-content-around">
-      <div className="text header d-flex justify-content-center myfont">
-        ORDER SUCCEEDED!
-      </div>
-      <div className="d-flex align-items-center logo-section justify-content-center">
-        <img loading="lazy" src='/Assets/logo_animated.gif' alt="logo" className="logo" />
-        <div className="d-flex justify-content-center flex-column success-section align-self-center">
-          <p className='myfont success-message'>your recipt and beats will be sent to your email, 
-          please check your spam or junk folder if the email is not in your main inbox. 
-          If you don&#39;t receive an email within 24 hours, please contact <a
-                href="mailto:talha23c@hotmail.com?subject=slivermuse"
-                className="header-link"
-                >SLIVERSMUSE</a></p>
+
+        {order && <>
+        <div className="text header d-flex justify-content-center myfont">
+            ORDER SUCCEEDED!
         </div>
-      </div>
+        <div className="d-flex align-items-center logo-section justify-content-center">
+            <img loading="lazy" src='/Assets/logo_animated.gif' alt="logo" className="logo" />
+            <div className="d-flex justify-content-center flex-column success-section align-self-center">
+            <p className='myfont order-number'>Order #{order.id}</p>
+            <p className='myfont success-message'>your beats will be sent to your email, 
+            please check your spam or junk folder if the email is not in your main inbox. 
+            If you don&#39;t receive an email within 24 hours, please contact <a
+                    href="mailto:talha23c@hotmail.com?subject=slivermuse"
+                    className="header-link"
+                    >SLIVERSMUSE</a></p>
+            </div>
+        </div>
+      </>}
+      {!order && <>
+        <div className="text header d-flex justify-content-center myfont">
+            ORDER FAILED!
+        </div>
+        <div className="d-flex align-items-center logo-section justify-content-center">
+            <img loading="lazy" src='/Assets/logo_animated.gif' alt="logo" className="logo" />
+            <div className="d-flex justify-content-center flex-column success-section align-self-center">
+            <p className='myfont success-message'>The payment was unsuccessful. If you received your beats please ignore this message!
+            If you've been charged but have not received your beats please contact <a
+                    href="mailto:talha23c@hotmail.com?subject=slivermuse"
+                    className="header-link"
+                    >SLIVERSMUSE</a></p>
+            </div>
+        </div>
+      </>}
     </div>
   )
 }
