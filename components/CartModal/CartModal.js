@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import axios from 'axios';
 
-function CartModal({toggleModal, cart, total, beats, formatPrice}) {
+function CartModal({toggleModal, cart, total, beats, formatPrice, setCart}) {
 
     const [checkout, setCheckout] = useState('CHECKOUT')
 
@@ -32,7 +32,14 @@ function CartModal({toggleModal, cart, total, beats, formatPrice}) {
                     const beat = beats.find(i => i.id === b)
                     return (<div className='d-flex cart-beat' key={beat.id}>
                         <p>{beat.name}</p>
-                        <p>{formatPrice(beat.price)}</p>
+                        <div className='d-flex'>
+                            <p>{formatPrice(beat.price)}</p>
+                            <p className='remove' onClick={() => {
+                                setCart(cart.filter(b => {
+                                    {return b !== beat.id}
+                                }))
+                            }}>X</p>
+                        </div>
                     </div>)
                 })}
                 <div className='d-flex cart-total pt-3'>

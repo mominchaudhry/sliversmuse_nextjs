@@ -44,7 +44,7 @@ const Beats = ({beats=[]}) => {
                 </>}
             </div>
             {modal && (
-                <CartModal toggleModal={toggleModal} cart={cart} total={total} beats={beats} formatPrice={formatPrice} />
+                <CartModal toggleModal={toggleModal} cart={cart} total={total} beats={beats} formatPrice={formatPrice} setCart={setCart} />
             )}
             <div className="text d-flex align-items-center beat-section">
                 <div className="text d-flex justify-content-center flex-wrap">

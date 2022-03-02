@@ -238,6 +238,7 @@ body.active-modal {
 .cart-beat {
   justify-content:space-between;
 }
+
 .cart-labels {
   justify-content:space-between;
   font-size: 25px;
@@ -245,6 +246,11 @@ body.active-modal {
   border-top: none !important;
   border-left: none;
   border-right: none;
+}
+
+.remove {
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 .cart-total {
