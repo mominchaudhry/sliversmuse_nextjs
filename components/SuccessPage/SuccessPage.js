@@ -51,7 +51,7 @@ function SuccessPage() {
             <img loading="lazy" src='/Assets/logo_animated.gif' alt="logo" className="logo" />
             <div className="d-flex justify-content-center flex-column success-section align-self-center">
             <p className='myfont success-message'>The payment was unsuccessful. If you received your beats please ignore this message!
-            If you've been charged but have not received your beats please contact <a
+            If you&#39;ve been charged but have not received your beats, please contact <a
                     href="mailto:talha23c@hotmail.com?subject=slivermuse"
                     className="header-link"
                     >SLIVERSMUSE</a></p>
