@@ -72,7 +72,7 @@
 }
 
 .cart-icon {
-  filter: invert(100%) sepia(1%) saturate(7495%) hue-rotate(113deg) brightness(105%) contrast(102%);
+  filter: invert(16%) sepia(98%) saturate(7484%) hue-rotate(300deg) brightness(83%) contrast(129%);
   height: 50px;
   margin-left: 100px;
   cursor: pointer;
@@ -80,8 +80,8 @@
 
 .cart-counter {
   border-style: solid;
-  border-color: #fff;
-  background-color: #fff;
+  border-color: #c300b2;
+  background-color: #c300b2;
   width: 30px;
   height: 30px;
   text-align: center;
