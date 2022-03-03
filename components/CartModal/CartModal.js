@@ -8,7 +8,6 @@ function CartModal({toggleModal, cart, total, beats, formatPrice, setCart}) {
 
     const handleCheckout = async () => {
         setCheckout('LOADING...')
-        console.log(process.env.NEXT_PUBLIC_STRIPE_PK)
         const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK)
         const res = await axios.post("https://sliversmuse.herokuapp.com/api/orders", {products:cart})
         const session = res.data;

@@ -64,10 +64,8 @@ const Beats = ({beats=[]}) => {
                                 if (!cart.includes(beat.id)){
                                     setCart([...cart, beat.id])
                                 } else {
-                                    console.log(cart)
                                     const newCart = cart.filter((b) => {return b !== beat.id})
                                     setCart(newCart)
-                                    console.log(newCart, 'cart 2')
                                 }
                             }}>
                                 { cart.includes(beat.id) ? <div>
