@@ -12,12 +12,13 @@ export default class MyDocument extends Document {
             <link rel="icon" href="/Assets/logo.png" />
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-            <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Kolker+Brush&family=Luckiest+Guy&family=Vujahday+Script&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/>
             <script
-                async
+                defer
                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
             />
             <script
+                defer
                 dangerouslySetInnerHTML={{
                 __html: `
                 window.dataLayer = window.dataLayer || [];
