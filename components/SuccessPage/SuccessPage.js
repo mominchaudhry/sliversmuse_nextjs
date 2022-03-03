@@ -10,9 +10,13 @@ function SuccessPage() {
 
     const confirm = async () => {
         console.log('momin',  session_id)
-        const confirmedOrder = await axios.post("https://sliversmuse.herokuapp.com/api/orders/confirm", {checkout_session: session_id});
-        if (confirmedOrder.status === 200) {
-            setOrder(confirmedOrder)
+        try {
+            const confirmedOrder = await axios.post("https://sliversmuse.herokuapp.com/api/orders/confirm", {checkout_session: session_id});
+            if (confirmedOrder.status === 200) {
+                setOrder(confirmedOrder)
+            }
+        } catch (err) {
+            setOrder(err)
         }
     }
 

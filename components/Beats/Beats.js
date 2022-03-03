@@ -34,7 +34,7 @@ const Beats = ({beats=[]}) => {
 
     return (
         <div className="d-flex flex-column align-items-center justify-content-around mb-5">
-            <div className='d-flex align-items-center'>
+            <div className='d-flex align-items-center beats-header'>
                 <div className="text header d-flex justify-content-center myfont mt-4">
                     BEATS
                 </div>

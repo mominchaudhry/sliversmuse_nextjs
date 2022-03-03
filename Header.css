@@ -49,6 +49,15 @@
   width: 200px;
 }
 
+.header-link-beats {
+  width: 250px;
+  margin-right: -50px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
 .contact-link {
   width: 75%;
 }
@@ -72,7 +81,7 @@
 }
 
 .cart-icon {
-  filter: invert(16%) sepia(98%) saturate(7484%) hue-rotate(300deg) brightness(83%) contrast(129%);
+  filter: invert(100%) sepia(1%) saturate(7495%) hue-rotate(113deg) brightness(105%) contrast(102%);
   height: 50px;
   margin-left: 100px;
   cursor: pointer;
@@ -80,8 +89,8 @@
 
 .cart-counter {
   border-style: solid;
-  border-color: #c300b2;
-  background-color: #c300b2;
+  border-color: #fff;
+  background-color: #fff;
   width: 30px;
   height: 30px;
   text-align: center;
@@ -248,6 +257,10 @@ body.active-modal {
   border-right: none;
 }
 
+.cart-label {
+  align-self: center;
+}
+
 .remove {
   margin-left: 20px;
   cursor: pointer;
@@ -324,4 +337,31 @@ body.active-modal {
   .success-section {
     width: 75%;
    }
+
+   .cart-label {
+    align-self: flex-start;
+  }
+
+  .cart-icon {
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  .cart-counter {
+    width: 25px;
+    height: 25px;
+    padding-top: 1px;
+    margin-left: -10px;
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+  .header-link-beats {
+    width: 250px;
+    margin-right: 0px;
+    margin-left: -10px;
+  }
+
+  .beats-header {
+    margin-bottom: 50px;
+  }
 }

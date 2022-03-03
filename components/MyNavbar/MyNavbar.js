@@ -22,6 +22,18 @@ const MyNavbar = ({beats = false, setLoading}) => {
                 </Nav.Link>
               </Nav>
               <Nav>
+              <Nav.Link
+                  href={beats ? "/" : "/beats"}
+                  className="header-link-beats"
+                  onClick={() => {setLoading(true)}}
+                >
+                  <img
+                    loading="lazy"
+                    src={beats ? "/Assets/home.png" : "/Assets/beats.png"}
+                    alt="beats"
+                    className="contact-link"
+                  />
+                </Nav.Link>
                 <Nav.Link
                   href="mailto:talha23c@hotmail.com?subject=slivermuse"
                   className="header-link"
@@ -30,18 +42,6 @@ const MyNavbar = ({beats = false, setLoading}) => {
                     loading="lazy"
                     src="/Assets/contact.png"
                     alt="contact"
-                    className="contact-link"
-                  />
-                </Nav.Link>
-                <Nav.Link
-                  href={beats ? "/" : "/beats"}
-                  className="header-link"
-                  onClick={() => {setLoading(true)}}
-                >
-                  <img
-                    loading="lazy"
-                    src={beats ? "/Assets/home.png" : "/Assets/beats.png"}
-                    alt="beats"
                     className="contact-link"
                   />
                 </Nav.Link>

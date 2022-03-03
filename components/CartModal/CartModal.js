@@ -15,6 +15,7 @@ function CartModal({toggleModal, cart, total, beats, formatPrice, setCart}) {
         await stripe.redirectToCheckout({
             sessionId: session.id
         })
+        setCheckout('CHECKOUT')
     }
 
   return (
@@ -23,7 +24,7 @@ function CartModal({toggleModal, cart, total, beats, formatPrice, setCart}) {
         <div className="modal-content2 myfont">
             {cart.length > 0 ?
             <>
-                <h2 className='align-self-center'>Cart</h2>
+                <h2 className='cart-label'>Cart</h2>
                 <div className='d-flex cart-labels mb-3'>
                     <p className='mb-0'>BEAT</p>
                     <p className='mb-0'>PRICE</p>
