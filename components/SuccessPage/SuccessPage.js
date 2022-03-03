@@ -34,7 +34,7 @@ function SuccessPage() {
             ORDER SUCCEEDED!
         </div>
         <div className="d-flex align-items-center logo-section justify-content-center">
-            <img loading="lazy" src='/Assets/logo_animated.gif' alt="logo" className="logo" />
+            <img src='/Assets/logo_animated.gif' alt="logo" className="logo" />
             <div className="d-flex justify-content-center flex-column success-section align-self-center">
             <p className='myfont order-number'>Order #{order.data.id}</p>
             <p className='myfont success-message'>your beats will be sent to your email, 

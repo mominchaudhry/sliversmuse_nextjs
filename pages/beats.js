@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import Beats from "../components/Beats";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
@@ -18,6 +19,11 @@ export default function BeatsPage ({beats = []}) {
 
   return (
     <div className="app">
+      <Head>
+        <title>
+          sliversmuse - beats
+        </title>
+      </Head>
       <div className="d-flex flex-column justify-content-between main-section">
         <MyNavbar setLoading={setIsLoading} beats={true}/>
         <Beats beats={beats}/>

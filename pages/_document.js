@@ -5,6 +5,11 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+            <meta charSet="UTF-8"/>
+            <meta name="description" content="Buy high quality beats now from sliversmuse"/>
+            <meta name="keywords" content="music, beats, song, rap"/>
+            <meta name="author" content="https://mominchaudhry.com"/>
+            <link rel="icon" href="/Assets/logo.png" />
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
             <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Kolker+Brush&family=Luckiest+Guy&family=Vujahday+Script&display=swap" rel="stylesheet"/>
