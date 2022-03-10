@@ -37,9 +37,9 @@ function SuccessPage() {
             <img src='/Assets/logo_animated.gif' alt="logo" className="logo" />
             <div className="d-flex justify-content-center flex-column success-section align-self-center">
             <p className='myfont order-number'>Order #{order.data.id}</p>
-            <p className='myfont success-message'>your beats will be sent to your email, 
-            please check your spam or junk folder if the email is not in your main inbox. 
-            If you don&#39;t receive an email within 24 hours, please contact <a
+            <p className='myfont success-message'>your beats will be sent to your email.<br/> <br/>
+            please check your spam or junk folder if the email is not in your main inbox.<br/> <br/>
+            If you don&#39;t receive an email within 24 hours, try refreshing this page or contact <a
                     href="mailto:talha23c@hotmail.com?subject=slivermuse"
                     className="header-link"
                     >SLIVERSMUSE</a></p>
@@ -53,8 +53,9 @@ function SuccessPage() {
         <div className="d-flex align-items-center logo-section justify-content-center">
             <img loading="lazy" src='/Assets/logo_animated.gif' alt="logo" className="logo" />
             <div className="d-flex justify-content-center flex-column success-section align-self-center">
-            <p className='myfont success-message'>The payment was unsuccessful. If you received your beats please ignore this message!
-            If you&#39;ve been charged but have not received your beats, please contact <a
+            <p className='myfont success-message'>There was an error during checkout!<br/> <br/>
+            If you received your beats please ignore this message!<br/> <br/>
+            If you&#39;ve been charged but have not received your beats, please try refreshing this page or contact <a
                     href="mailto:talha23c@hotmail.com?subject=slivermuse"
                     className="header-link"
                     >SLIVERSMUSE</a></p>

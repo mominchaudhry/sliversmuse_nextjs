@@ -275,10 +275,11 @@ body.active-modal {
 .success-message {
   color: white;
   font-size: 20px;
+  word-spacing: 5px;
 }
 
 .success-section {
- width: 25%;
+ width: 50%;
 }
 
 .cart-button {
