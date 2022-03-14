@@ -8,6 +8,13 @@ function CartModal({toggleModal, cart, total, beats, formatPrice, setCart}) {
 
     const handleCheckout = async () => {
         setCheckout('LOADING...')
+        window?.gtag("event", "begin_checkout", {
+            currency: "CAD",
+            value: total,
+            items: cart.map((id) => ({
+                item_id:id
+            }))
+          });
         const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK)
         const res = await axios.post("https://sliversmuse.herokuapp.com/api/orders", {products:cart})
         const session = res.data;
@@ -35,6 +42,19 @@ function CartModal({toggleModal, cart, total, beats, formatPrice, setCart}) {
                         <div className='d-flex'>
                             <p>{formatPrice(beat.price)}</p>
                             <p className='remove' onClick={() => {
+                                window?.gtag("event", "remove_from_cart", {
+                                    currency: "CAD",
+                                    value: beat.price,
+                                    items: [
+                                      {
+                                        item_id: beat.id,
+                                        item_name: beat.name,
+                                        currency: "CAD",
+                                        price: beat.price,
+                                        quantity: 1
+                                      }
+                                    ]
+                                  });
                                 setCart(cart.filter(b => {
                                     {return b !== beat.id}
                                 }))

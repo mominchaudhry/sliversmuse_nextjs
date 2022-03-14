@@ -37,6 +37,12 @@ const MyNavbar = ({beats = false, setLoading}) => {
                 <Nav.Link
                   href="mailto:talha23c@hotmail.com?subject=slivermuse"
                   className="header-link"
+                  onClick={() => {
+                    window?.gtag("event", "select_content", {
+                      content_type: "contact",
+                      item_id: "contact"
+                    });
+                  }}
                 >
                   <img
                     loading="lazy"

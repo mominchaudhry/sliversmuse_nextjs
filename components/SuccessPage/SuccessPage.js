@@ -12,6 +12,14 @@ function SuccessPage() {
         try {
             const confirmedOrder = await axios.post("https://sliversmuse.herokuapp.com/api/orders/confirm", {checkout_session: session_id});
             if (confirmedOrder.status === 200) {
+                console.log(confirmedOrder)
+                window?.gtag("event", "purchase", {
+                    currency: "CAD",
+                    value: confirmedOrder.data.total,
+                    items: confirmedOrder.data.beats.map((b) => ({
+                        item_id:b.id
+                    }))
+                  });
                 setOrder(confirmedOrder)
             }
         } catch (err) {

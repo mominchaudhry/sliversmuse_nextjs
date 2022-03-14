@@ -21,6 +21,15 @@ const Beats = ({beats=[]}) => {
     }, [cart]);
 
     const toggleModal = () => {
+        if (!modal){
+            window?.gtag("event", "view_cart", {
+                currency: "CAD",
+                value: total,
+                items: cart.map((id) => ({
+                    item_id:id
+                }))
+              });
+        }
         setModal(!modal);
     };
 
@@ -54,13 +63,40 @@ const Beats = ({beats=[]}) => {
                                 <p className='myfont beat-name'>{beat.name}</p>
                                 <p className='myfont beat-price'> {formatPrice(beat.price)}</p>
                             </div>
-                            <audio controls>
+                            <audio controls onClick={() => {
+                                window?.gtag("event", "view_item", {
+                                    currency: "CAD",
+                                    value: beat.price,
+                                    items: [
+                                      {
+                                        item_id: beat.id,
+                                        item_name: beat.name,
+                                        currency: "CAD",
+                                        price: beat.price,
+                                        quantity: 1
+                                      }
+                                    ]
+                                  });
+                            }}>
                                 <source src={beat.mp3} type="audio/mpeg" />
                                 This browser does not support the audio element. Please use a different browser
                             </audio>
                             <button 
                             className='myfont w-100 cart-button' 
                             onClick={() => {
+                                window?.gtag("event", cart.includes(beat.id) ? "remove_from_cart" : "add_to_cart", {
+                                    currency: "CAD",
+                                    value: beat.price,
+                                    items: [
+                                      {
+                                        item_id: beat.id,
+                                        item_name: beat.name,
+                                        currency: "CAD",
+                                        price: beat.price,
+                                        quantity: 1
+                                      }
+                                    ]
+                                  });
                                 if (!cart.includes(beat.id)){
                                     setCart([...cart, beat.id])
                                 } else {
