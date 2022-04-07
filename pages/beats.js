@@ -40,6 +40,7 @@ export async function getStaticProps() {
 
   let beatsData = []
   for (let b of data?.data?.data){
+    if (b && b.attributes && b.attributes.mp3 && b.attributes.mp3.data && b.attributes.mp3.data.attributes)
       beatsData = [{
         id: b.id,
         name: b.attributes.title,

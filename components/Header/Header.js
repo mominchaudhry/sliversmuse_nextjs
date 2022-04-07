@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="d-flex flex-column align-items-center justify-content-around">
+    <div className="d-flex flex-column align-items-center justify-content-around home-page">
       <div className="text d-flex justify-content-center myfont">
         sliversmuse
       </div>

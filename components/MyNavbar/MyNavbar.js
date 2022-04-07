@@ -10,7 +10,7 @@ const MyNavbar = ({beats = false, setLoading}) => {
         <Nav className="me-auto">
             <Nav.Link
                   href="/"
-                  className="header-link"
+                  className="header-link header-link-logo"
                   onClick={() => {setLoading(true)}}
                 >
                   <img

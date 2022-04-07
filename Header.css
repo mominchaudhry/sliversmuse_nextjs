@@ -297,6 +297,15 @@ body.active-modal {
 }
 
 @media screen and (max-width: 960px) {
+  .header-link-logo{
+    width: 0px;
+    height: 0px;
+  }
+
+  .home-page{
+    margin-top: 30px;
+  }
+
   .logo-section {
     flex-direction: column;
   }
