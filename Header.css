@@ -8,8 +8,10 @@
   color: white;
 }
 
-.godmode {
-  width: 15%;
+.footer-img {
+  display: block;
+  width: 75px;
+  margin: 10px;
 }
 
 .nav-menu {
@@ -328,8 +330,8 @@ body.active-modal {
     padding-left: 15px;
   }
 
-  .godmode {
-    width: 30%;
+  .footer-img {
+    width: 50px;
   }
 
   .about-link {

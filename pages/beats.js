@@ -2,6 +2,7 @@ import axios from "axios";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Beats from "../components/Beats";
+import Footer from "../components/Footer";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
 import MyNavbar from "../components/MyNavbar";
 
@@ -27,9 +28,7 @@ export default function BeatsPage ({beats = []}) {
       <div className="d-flex flex-column justify-content-between main-section">
         <MyNavbar setLoading={setIsLoading} beats={true}/>
         <Beats beats={beats}/>
-        <div className="d-flex justify-content-center w-100">
-        <img loading="lazy" className="godmode" src="/Assets/godmode.png" alt="godmode" />
-        </div>
+        <Footer />
       </div>
     </div>
   )

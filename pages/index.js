@@ -3,6 +3,7 @@ import MyNavbar from "../components/MyNavbar";
 import { useEffect, useState } from "react";
 import LoadingPage from "../components/LoadingPage/LoadingPage";
 import Head from "next/head";
+import Footer from "../components/Footer";
 
 export default function Home() {
 
@@ -25,9 +26,7 @@ export default function Home() {
       <div className="d-flex flex-column justify-content-between main-section">
         <MyNavbar setLoading={setIsLoading} beats={false}/>
         <Header />
-        <div className="d-flex justify-content-center w-100">
-          <img loading="lazy" className="godmode" src="/Assets/godmode.png" alt="godmode" />
-        </div>
+        <Footer />
       </div>
     </div>
   )
